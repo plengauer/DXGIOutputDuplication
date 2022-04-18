@@ -16,9 +16,6 @@
     <Filter Include="Header Files\NVEnc">
       <UniqueIdentifier>{e71adcdf-52aa-4e51-8323-2e0d0d57eb62}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\NVEnc">
-      <UniqueIdentifier>{d39b399d-bddc-4e08-a63d-7dd40dea6cf8}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -29,12 +26,6 @@
     </ClCompile>
     <ClCompile Include="Preproc.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Samples\NvCodec\NvEncoder\NvEncoder.cpp">
-      <Filter>Source Files\NVEnc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Samples\NvCodec\NvEncoder\NvEncoderD3D11.cpp">
-      <Filter>Source Files\NVEnc</Filter>
     </ClCompile>
     <ClCompile Include="ScreenGrab11.cpp">
       <Filter>Source Files</Filter>

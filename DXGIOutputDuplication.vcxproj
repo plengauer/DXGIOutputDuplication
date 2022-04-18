@@ -162,8 +162,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Samples\NvCodec\NvEncoder\NvEncoder.cpp" />
-    <ClCompile Include="..\Samples\NvCodec\NvEncoder\NvEncoderD3D11.cpp" />
     <ClCompile Include="DDAImpl.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Preproc.cpp" />

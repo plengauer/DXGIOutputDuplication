@@ -26,6 +26,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#define MY_V2
 
 #define INITGUID
 #include <d3d11.h>
@@ -33,10 +34,14 @@
 #include "Defs.h"
 #include "DDAImpl.h"
 #include "Preproc.h"
+#ifndef MY_V2
 #include "NvEncoder/NvEncoderD3D11.h"
+#endif
 #include "ScreenGrab11.h"
 
+#ifdef MY_V2
 #define V2
+#endif
 
 class DemoApplication
 {
