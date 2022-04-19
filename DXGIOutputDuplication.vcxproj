@@ -164,17 +164,11 @@
   <ItemGroup>
     <ClCompile Include="DDAImpl.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Preproc.cpp" />
     <ClCompile Include="ScreenGrab11.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Samples\NvCodec\NvEncoder\nvEncodeAPI.h" />
-    <ClInclude Include="..\Samples\NvCodec\NvEncoder\NvEncoder.h" />
-    <ClInclude Include="..\Samples\NvCodec\NvEncoder\NvEncoderD3D11.h" />
-    <ClInclude Include="..\Samples\Utils\Logger.h" />
     <ClInclude Include="DDAImpl.h" />
     <ClInclude Include="Defs.h" />
-    <ClInclude Include="Preproc.h" />
     <ClInclude Include="ScreenGrab11.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
