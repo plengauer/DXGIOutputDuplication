@@ -33,9 +33,9 @@
 #include "DDAImpl.h"
 #include "ScreenGrab11.h"
 
-class DemoApplication
+class Application
 {
-    /// Demo Application Core class
+    /// Application Core class
 #define returnIfError(x)\
     if (FAILED(x))\
     {\
@@ -123,7 +123,7 @@ public:
     }
 
     /// Capture a frame using DDA
-    HRESULT Capture(int wait)
+    HRESULT Capture(wchar_t* name, int wait)
     {
         HRESULT hr = pDDAWrapper->GetCapturedFrame(&pDupTex2D, wait); // Release after preproc
         if (FAILED(hr))
@@ -133,7 +133,7 @@ public:
 
         MEASURE_PERFORMANCE
         // this takes forever when red dead is running
-        return DirectX::SaveWICTextureToFile(pCtx, pDupTex2D, GUID_ContainerFormatBmp, L"DDATest_0.bmp");
+        return DirectX::SaveWICTextureToFile(pCtx, pDupTex2D, GUID_ContainerFormatBmp, L"screenshot.bmp");
     }
 
     /// Release all resources
@@ -149,8 +149,8 @@ public:
 
         SAFE_RELEASE(pDupTex2D);
     }
-    DemoApplication() {}
-    ~DemoApplication()
+    Application() {}
+    ~Application()
     {
         Cleanup(true); 
     }
@@ -158,12 +158,19 @@ public:
 
 int main(int argc, char** argv)
 {
+    if (argc < 2) return 1;
+    char* filename_ascii = argv[1];
+    size_t filename_length = strlen(filename_ascii);
+    wchar_t* filename_unicode = (wchar_t*) malloc(sizeof(wchar_t) * (filename_length + 1));
+    mbstowcs(filename_unicode, filename_ascii, filename_length + 1);
+
     MEASURE_PERFORMANCE
-    DemoApplication* application = new DemoApplication();
+    Application* application = new Application();
     application->Init();
     HRESULT hr;
     do {
-        hr = application->Capture(1000 / 60);
+        hr = application->Capture(filename_unicode, 1000 / 60);
     } while (hr == DXGI_ERROR_WAIT_TIMEOUT);
     delete application;
+    free(filename_unicode);
 }
