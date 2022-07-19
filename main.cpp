@@ -133,7 +133,7 @@ public:
 
         MEASURE_PERFORMANCE
         // this takes forever when red dead is running
-        return DirectX::SaveWICTextureToFile(pCtx, pDupTex2D, GUID_ContainerFormatBmp, L"screenshot.bmp");
+        return DirectX::SaveWICTextureToFile(pCtx, pDupTex2D, GUID_ContainerFormatBmp, name);
     }
 
     /// Release all resources
