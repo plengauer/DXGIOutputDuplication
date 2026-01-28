@@ -1,0 +1,14 @@
+name: Autoversion
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'
+
+jobs:
+  bump:
+    runs-on: ubuntu-slim
+    steps:
+      - uses: plengauer/autoversion@v2.3.0
+        with:
+          github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+          openai_token: ${{ secrets.OPENAI_TOKEN }}
