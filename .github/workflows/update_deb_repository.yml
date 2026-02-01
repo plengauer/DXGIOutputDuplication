@@ -1,0 +1,19 @@
+name: Update Debian Repository
+
+on:
+  release:
+    types: published
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+      actions: read
+    steps:
+      - uses: plengauer/create-deb-repository@v0.0.17
+      - uses: actions/upload-pages-artifact@v4.0.0
+        with:
+          path: .
+      - uses: actions/deploy-pages@v4.0.5
