@@ -7,7 +7,7 @@ on:
   slash_command:
     name: triage
     events: [issue_comment]
-roles: all
+  roles: all
 rate-limit:
   max: 2
   window: 60
