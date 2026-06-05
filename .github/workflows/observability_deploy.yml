@@ -13,7 +13,7 @@ jobs:
     concurrency:
       group: deploy-otel-job-${{ github.ref_name }}
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@v5.42.1
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@4804af0803d2753734b18fe4ef2a99b7e4ebdc07 # v5.42.1
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
@@ -23,7 +23,7 @@ jobs:
             ${{ secrets.ACTIONS_GITHUB_TOKEN }}
             ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
             ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
-      - uses: plengauer/opentelemetry-github/actions/instrument/deploy@v5.42.1
+      - uses: plengauer/opentelemetry-github/actions/instrument/deploy@4804af0803d2753734b18fe4ef2a99b7e4ebdc07 # v5.42.1
         with:
           github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
         env:
