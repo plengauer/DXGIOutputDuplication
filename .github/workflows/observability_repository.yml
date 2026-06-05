@@ -1,0 +1,20 @@
+name: OpenTelemetry
+on:
+  pull_request:
+    types: [opened, reopened, closed]
+  pull_request_review:
+    types: [submitted]
+  create:
+  delete:
+  push:
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: plengauer/opentelemetry-github/actions/instrument/repository@909c7153cce2c6ef916f4fde6958886d9d65af03
+        env:
+          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
