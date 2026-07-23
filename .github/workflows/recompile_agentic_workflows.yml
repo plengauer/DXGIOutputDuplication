@@ -16,6 +16,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      actions: read
     env:
       GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN || github.token }}
     steps:
