@@ -14,7 +14,6 @@ on:
       - OpenAI Codex
       - Recompile Agentic Workflows
       - Renovate
-      - Report Failed Workflows
     types:
       - completed
 jobs:
