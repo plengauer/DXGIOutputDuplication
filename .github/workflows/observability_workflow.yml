@@ -4,6 +4,7 @@ on:
   workflow_run:
     workflows:
       - .github/workflows/copilot-setup-steps.yml
+      - Analyze
       - Autobackport
       - Autoversion
       - Claude
