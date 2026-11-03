@@ -5,8 +5,6 @@ on:
     workflows:
       - .github/workflows/copilot-setup-steps.yml
       - Analyze
-      - Autobackport
-      - Autoversion
       - Claude
       - CodeQL
       - Copilot
